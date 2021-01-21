@@ -25,8 +25,7 @@ public class Usuario {
 	private String usuario;
 	
 	
-	@NotNull
-	
+	@NotNull	
 	private String senha;
 
 
