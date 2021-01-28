@@ -50,7 +50,10 @@ export class CadastrarComponent implements OnInit {
 
     if(this.usuario.senha != this.confirmandoSenha){
       alert('As senhas não conferem!')
-    }else if(this.usuario.nome.length <= 2){
+    }else if(this.usuario.senha.length <= 5){
+      alert('Sua senha deve ter mais que 5 caracteres!')
+    }
+    else if(this.usuario.nome.length <= 2){
       alert('Insira um nome maior que 2 caracteres')
     }else if(this.usuario.usuario.length <= 4){
       alert('Insira um usuário maior que 4 caracteres')

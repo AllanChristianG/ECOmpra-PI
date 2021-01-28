@@ -9,6 +9,7 @@
   color: #000000;
 }
 
+
 .sessao-header{
   display: flex;
   align-items: center;
@@ -97,4 +98,11 @@
   bottom: 2rem;
   opacity: 1;
   visibility: visible;
+}
+
+.novidades {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 45px;
+  color: #000000;
 }
