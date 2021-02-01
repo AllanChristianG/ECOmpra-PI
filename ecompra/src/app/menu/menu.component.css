@@ -1,0 +1,50 @@
+
+
+.bg-bege{
+    background-color: cadetblue;
+}
+
+.img-logo{
+    width: 20%;
+}
+
+
+
+.fa{
+    font-size: 30pt;
+    color: #34af23;
+    transition: all 0.2s;
+
+}
+
+
+.fa:hover{
+    font-size: 35pt;
+}
+
+.fa-facebook-square:hover{
+    color: #3b5998;
+}
+.fa-instagram:hover{
+    color: #c13584;
+}
+.fa-linkedin-square:hover{
+    color: #0072b1;
+
+}
+.fa-whatsapp:hover{
+    color:#34af23;
+}
+
+.bag{
+    width: 45px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    transition: all 0.5s;
+}
+
+.bag:hover{
+    width: 55px;
+    margin-bottom: 0px;
+
+}

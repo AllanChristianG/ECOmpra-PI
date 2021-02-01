@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -24,8 +25,12 @@ public class Usuario {
 	@Size(min=5, max=100)
 	private String usuario;
 	
+<<<<<<< HEAD
 	
 	@NotNull	
+=======
+	@NotBlank
+>>>>>>> b82b6bf6b38c77a33826ecb80131d1e70c8c44e8
 	private String senha;
 
 

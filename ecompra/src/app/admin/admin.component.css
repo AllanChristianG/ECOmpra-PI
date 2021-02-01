@@ -1,0 +1,9 @@
+.ed:hover{
+    background-color: blue;
+}
+.rm:hover{
+    background-color: red;
+}
+#fundo{
+    background-color: rgb(36, 17, 17) !important;
+}

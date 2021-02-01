@@ -50,6 +50,7 @@ public class ProdutoController {
 	@PutMapping
 	public ResponseEntity<Produto> Put(@RequestBody Produto objetoProduto){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(objetoProduto));
+
 	}
 	
 	@DeleteMapping("/{codigo}")

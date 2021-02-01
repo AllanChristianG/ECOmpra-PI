@@ -1,0 +1,49 @@
+
+/* Estilizzação texto e BG do footer */
+.bg{
+    background-image: linear-gradient(0deg, var(--degradep),  var(--degrades));
+}
+
+.titulo{
+    font-size: xx-large;
+}    
+/* Fim da estilizzação texto e BG do footer */
+
+/* Estilização de links do site */
+
+a{
+    list-style: none;
+    text-decoration: none;
+    color: gray;
+}
+
+a:hover{
+    color: black;
+}
+
+/* Fim da estilização de links do site */
+
+
+/* Estilização dos Icones de rede social */
+
+.fa{
+    font-size: 40pt;
+}
+
+.fa:hover{
+    font-size: 45pt;
+}
+
+.fa-facebook-square:hover{
+    color: #3b5998;
+}
+.fa-instagram:hover{
+    color: #c13584;
+}
+.fa-linkedin-square:hover{
+    color: #0072b1;
+}
+.fa-whatsapp:hover{
+    color:#34af23;
+}
+/* fim da estilização dos Icones de rede social */

@@ -1,0 +1,57 @@
+<!-- Formulário -->
+
+<div class="container cor col-md-6 mt-4  justify-content-center">
+  <div *ngIf="admin == false">
+
+    <h1 class="text-center">Cadastre-se</h1>
+    <p class="text-center">Preencha o formulário abaixo</p>
+  </div>
+  <hr>
+
+
+
+  <div class="form-row d-flex justify-content-center">
+    <div class="col-md-6 ">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input [(ngModel)]='usuario.nome' (input)='validandoNomeReal($event)' type="text" class="form-control" id="nome" placeholder="Digite aqui seu nome">
+      </div>
+      <div class="form-group">
+        <label for="usuarioFormulario">Usuário:</label>
+        <input [(ngModel)]='usuario.usuario' (input)='validandoNomeUsuario($event)' type="text" class="form-control" id="usuarioFormulario"
+          placeholder="Digite aqui seu usuário">
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha:</label>
+        <input (input)='confirmarSenha($event)' type="password" class="form-control" id="senha"
+          placeholder="Digite aqui sua senha">
+      </div>
+      <div class="form-group">
+        <label for="senhaConfirmacao">Confirmar senha:</label>
+        <input [(ngModel)]='usuario.senha' type="password" class="form-control" id="senhaConfirmacao"
+          placeholder="Confirmar senha">
+      </div>
+      
+      <div class="form-group" *ngIf = "authService.logado()">
+        <label for="tipoUsuario">Tipo usuário:</label>
+        <select class="form-control" (change)='tipoUsuarioMetodo($event)'>
+          <option value="ausente">Selecione o usuário</option>
+          <option value="normal">Normal</option>
+          <option value="administrador">Administrador</option>
+        </select>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-outline-danger" id="botaoCancelar">Limpar</button>
+        <button type="submit" class="btn btn-outline-success" onkeydown="" id="botaoEntrar"
+          (click)='cadastrar()'>Cadastrar</button>
+      </div>
+    </div>
+  </div>
+
+<!-- Fim do formulário -->
+
+
+
+</div>
+

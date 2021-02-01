@@ -1,0 +1,20 @@
+.valores {
+  background-image: linear-gradient(0deg, var(--degradep), var(--degrades))
+}
+
+/* configurações sobre a parte de devs */
+
+.devs {
+   background-image: linear-gradient(0deg, var(--degrades), var(--degradep));  /* cor do BG */
+}
+
+.devs img {
+  height: 250px;
+  width: 250px;             /*Img dos devs*/
+  transition: all 1s;
+}
+
+.devs img:hover {
+  height: 300px;            /*IMG com hover*/
+  width: 300px;
+}

@@ -1,0 +1,119 @@
+/* Configurações gerais de BG e titulo */
+/* #fundo {
+  background-color: #fff;
+} */
+
+.novidades {
+  text-align: center;
+  font-size: 45px;
+  color: #000000;
+}
+
+.sessao-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.produtos{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card{
+  width: 18rem;
+  height: 25rem;
+  position: relative;
+  margin-top: 5rem;
+}
+
+.card-img-wrapper{
+  width: 100%;
+  height: 100%;
+  background-color: #4b4b4b;
+  border-radius: 0.5rem;
+}
+
+.card-img-wrapper img{
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  opacity: .8;
+  transition: opacity .5s;
+}
+
+.card:hover .card-img-wrapper img{
+  opacity: .5;
+}
+
+.card-info{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  padding: 2rem;
+  text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0,0.6);
+  transition: all 0.5s;
+}
+
+.card-info h2{
+  font-size: 2rem;
+  font-weight: 500;
+  color: #eee;
+}
+
+.card-info h3{
+  font-weight: bold;
+  color: #34af23;
+  margin-bottom: 1rem;
+}
+
+.card-info p{
+  color: #eee;
+  font-weight: 400;
+  width:80%;
+  margin-bottom: 1.5rem;
+}
+
+.btn{
+  color: #eee;
+  border-radius: .5rem;
+  border: none;
+  box-shadow: 0 .1rem .8rem rgba(0, 0, 0,0.4);
+}
+
+.card-info button{
+  background: #34af23;
+  width: 8rem;
+  height: 2.5rem;
+}
+
+.card-info button:hover{
+  width: 8.3rem;
+  height: 2.8rem;
+}
+
+.card:hover .card-info{
+  bottom: 2rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.novidades {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 45px;
+  color: #000000;
+}
+.espacamentoCarrosselCards{
+  margin-top: 50px;
+}
+.fa{
+  font-size: 60pt;
+  color: #008000;
+  transition: all 0.5s;
+}
+.fa:hover{
+  font-size: 70pt;
+  color: #228B22;
+}

@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid row d-flex">
+
+    <img [src]="imglog" class="img-logo img-fluid p-2" alt="">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <form class="d-flex w-100">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success ml-3 " type="submit">Pesquisar</button>
+      </form>
+
+      <div class="col-md-3 d-flex justify-content-end pr-3">
+
+
+        <!-- entrar e sacola de compras -->
+        <div>
+
+          <img class="bag" src="../../assets/img/menu/sacola.png" alt="">
+          <button class="btn btn-outline-success" routerLink='/entrar'>Entrar</button>
+
+        </div>
+      </div>
+      <!-- fim de entrar e sacola de compras -->
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!-- Menu de navegação -->
+
+<div class="nav bg-light container-fluid">
+  <div class="col-md-12 d-flex justify-content-center">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" routerLink='/home' role="tab"
+          aria-controls="nav-home" aria-selected="false">Home</a>
+
+        <a class="nav-item nav-link " id="nav-profile-tab" data-toggle="tab" routerLink='/sobrenos' role="tab"
+          aria-controls="nav-profile" aria-selected="false">Quem Somos</a>
+
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" routerLink='/contato' role="tab"
+          aria-controls="nav-contact" aria-selected="false">Contato</a>
+
+        <a class="nav-item nav-link" id="nav-admin-tab" data-toggle="tab" routerLink='/admin' role="tab"
+          aria-controls="nav-admin" aria-selected="false">Administrador</a>
+
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+      </div>
+
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+      </div>
+
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+      </div>
+
+      <div class="tab-pane fade" id="nav-admin" role="tabpanel" aria-labelledby="nav-admin-tab">
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fim Menu de navegação -->

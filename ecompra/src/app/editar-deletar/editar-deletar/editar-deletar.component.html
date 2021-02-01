@@ -1,0 +1,88 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            <h2 class="text-dark"> CATEGORIA:</h2> <h2 class="text-danger ml-2">  <u> {{categoria.nome}}  </u> </h2>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-12 d-flex justify-content-between">
+            <button class="btn btn-outline-secondary">VOLTAR</button>
+            <a class="btn btn-outline-warning" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                 aria-expanded="false" aria-controls="multiCollapseExample1"> ATUALIZAR </a>
+            <button class="btn btn-outline-danger" (click)='apagar()'>DELETAR</button>
+        </div>
+    </div>
+
+
+    <!-- TESTE -->
+
+    <div class="row d-flex justify-content-center mt-5">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            <div>
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label">NOME ATUAL: </label>
+                                    <input [(ngModel)]='categoria.nome' readonly type="text" class="form-control" id="inputNome"
+                                        aria-describedby="nome" placeholder="Digite aqui o novo nome da categoria">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputDescricao" class="form-label">DESCRIÇÃO ATUAL: </label>
+                                    <input [(ngModel)]='categoria.descricao' readonly type="text" class="form-control"
+                                        id="descricao" placeholder="Digite aqui a nova descrição da categoria">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label">SETOR ATUAL: </label>
+                                    <input [(ngModel)]='categoria.setor' readonly type="text" class="form-control"
+                                        id="inputSetor" placeholder="Digite aqui o novo setor da categoria">
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-outline-primary">ENVIAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            <div>
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label">NOVO NOME: </label>
+                                    <input [(ngModel)]='categoria.nome' type="text" class="form-control" id="inputNome"
+                                        aria-describedby="nome" placeholder="Digite aqui o novo nome da categoria">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputDescricao" class="form-label">NOVA DESCRIÇÃO: </label>
+                                    <input [(ngModel)]='categoria.descricao' type="text" class="form-control"
+                                        id="descricao" placeholder="Digite aqui a nova descrição da categoria">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label">NOVO SETOR: </label>
+                                    <input [(ngModel)]='categoria.setor' type="text" class="form-control"
+                                        id="inputSetor" placeholder="Digite aqui o novo setor da categoria">
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-danger">LIMPAR</button>
+                                    <button class="btn btn-outline-success" (click)='atualizar()'>ENVIAR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

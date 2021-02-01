@@ -1,0 +1,170 @@
+<div class="container-fluid">
+    <!-- forms -->
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-12">
+
+            <p class="text-center pt-3">
+                <a class="btn btn-success mr-2" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                    aria-expanded="false" aria-controls="multiCollapseExample1">Cadastrar categoria</a>
+                <button class="btn btn-success " type="button" data-toggle="collapse"
+                    data-target="#multiCollapseExample2" aria-expanded="false"
+                    aria-controls="multiCollapseExample2">Cadastrar produto</button>
+
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            <div>
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label">Nome da categoria:</label>
+                                    <input [(ngModel)]='categoria.nome' type="text" class="form-control" id="inputNome"
+                                        aria-describedby="nome">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputDescricao" class="form-label">Descrição:</label>
+                                    <input [(ngModel)]='categoria.descricao' type="text" class="form-control"
+                                        id="descricao">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label">Setor:</label>
+                                    <input [(ngModel)]='categoria.setor' type="text" class="form-control"
+                                        id="inputSetor">
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-success" (click)='cadastrar()'>Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body">
+                            <div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Nome do Produto:</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Descrição:</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Setor:</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /forms -->
+
+    <!-- Acordeão -->
+    <div class="accordion" id="accordionExample">
+
+
+
+        <!-- Acordeão 1 -->
+        <div class="card">
+            <div class="card-header d-flex justify-content-center" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-outline-success btn-lg text-center collapsed" type="button"
+                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        Tabela de categorias
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="shadow-lg p-3 mb-5 bg bg-light">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Setor</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let cat of listaCategoria">
+                                    <th> {{cat.codigo}}</th>
+                                    <td>{{cat.nome}}</td>
+                                    <td>{{cat.descricao}}</td>
+                                    <td>{{cat.setor}}</td>
+                                    <td>
+                                        <button class="btn btn-outline-info" [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES </button>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Acordeão 2 -->
+        <div class="card">
+            <div class="card-header d-flex justify-content-center" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-outline-success text-center collapsed" type="button" data-toggle="collapse"
+                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Tabela de produtos
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <div class="shadow-lg p-3 mb-5 bg bg-light">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Preço</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Estoque</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr **ngFor="let prod of listaProduto">
+                                    <th>{{prod.codigo}}</th>
+                                    <td>{{prod.nome}}</td>
+                                    <td>{{prod.preco}}}</td>
+                                    <td>{{prod.descricao}}</td>
+                                    <td>{{prod.estoque}}</td>
+                                    <td>
+
+
+                                        <a href=""><img class="ed" src="../../assets/img/editar.png" width="20px"
+                                                height="20px" alt=""></a>
+                                        <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px"
+                                                height="20px" alt=""></a>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Acordeão -->
