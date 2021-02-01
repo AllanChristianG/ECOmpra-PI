@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12 d-flex justify-content-center">
-            <h2 class="text-dark"> CATEGORIA:</h2> <h2 class="text-danger ml-2">  <u> {{categoria.nome}}  </u> </h2>
+            <h2 class="text-dark"> CATEGORIA:</h2> <h2 class="text-danger ml-2">  <u> {{nomeAntigo}}  </u> </h2>
         </div>
     </div>
     <div class="row mt-5">
@@ -26,7 +26,7 @@
                             <div>
                                 <div class="mb-3">
                                     <label for="inputNome" class="form-label">NOME ATUAL: </label>
-                                    <input [(ngModel)]='categoria.nome' readonly type="text" class="form-control" id="inputNome"
+                                    <input {{nomeAntigo}} readonly type="text" class="form-control" id="inputNome"
                                         aria-describedby="nome" placeholder="Digite aqui o novo nome da categoria">
                                 </div>
                                 <div class="mb-3">

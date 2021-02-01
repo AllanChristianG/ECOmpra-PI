@@ -45,25 +45,62 @@
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
                         <div class="card card-body">
                             <div>
+
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nome do Produto:</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
+                                    <label for="nomeproduto" class="form-label">Nome do Produto:</label>
+                                    <input [(ngModel)]="produto.nome" type="text" class="form-control" id="nomeproduto">
                                 </div>
+
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Descrição:</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <label for="descricaoprodutos" class="form-label">Descrição:</label>
+                                    <input [(ngModel)]="produto.descricao" type="text" class="form-control"
+                                        id="descricaoprodutos">
                                 </div>
+
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Setor:</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    <label for="preco" class="form-label">Preço:</label>
+                                    <input [(ngModel)]="produto.preco" type="text" class="form-control" id="preco">
+
                                 </div>
+
+                                <div class="mb-3">
+                                    <label for="quantidade" class="form-label">Quantidade:</label>
+                                    <input [(ngModel)]="produto.quantidade" type="text" class="form-control"
+                                        id="quantidade">
+                                </div>
+
+                                <div class="mb-3">
+
+                                    <label for="promocao" class="form-label">Promoção:</label>
+                                    <select [(ngModel)] = "promo" class="form-control" name="promocao" id="promocao" (change) = "validaPromo($event)">
+                                        <option value="selecione">Selecione uma opção</option>
+                                        <option value="true">Sim</option>
+                                        <option value="false">Não</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="categoria" class="form-label">Categoria:</label>
+                                    <select class="form-control" name="categoria" id="categoria"  [(ngModel)] = "idCat" (change) = "findByIdCategoria()">
+                                        <option value="0">Selecione uma categoria</option>
+                                        <option *ngFor="let categoria of listaCategoria" [value]="categoria.codigo">
+                                            {{categoria.nome}}</option>
+                                    </select>
+                                </div>
+
                                 <div class="d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <button type="submit" class="btn btn-success"
+                                        (click)="cadastrarProduto()">Submit</button>
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
 
 
@@ -106,7 +143,9 @@
 
                             <tbody>
                                 <tr *ngFor="let cat of listaCategoria">
-                                    <th> {{cat.codigo}}</th>
+
+                                    <th>{{cat.codigo}}</th>
+
                                     <td>{{cat.nome}}</td>
                                     <td>{{cat.descricao}}</td>
                                     <td>{{cat.setor}}</td>
@@ -124,8 +163,11 @@
         <div class="card">
             <div class="card-header d-flex justify-content-center" id="headingThree">
                 <h2 class="mb-0">
-                    <button class="btn btn-outline-success text-center collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+
+                    <button class="btn btn-outline-success btn-lg text-center collapsed" type="button"
+                        data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+
                         Tabela de produtos
                     </button>
                 </h2>
@@ -142,24 +184,31 @@
                                     <th scope="col">Preço</th>
                                     <th scope="col">Descrição</th>
                                     <th scope="col">Estoque</th>
+                                    <th scope="col">Categoria</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                <tr **ngFor="let prod of listaProduto">
+
+                                <tr *ngFor="let prod of listProdutos">
+
                                     <th>{{prod.codigo}}</th>
                                     <td>{{prod.nome}}</td>
-                                    <td>{{prod.preco}}}</td>
+                                    <td>{{prod.preco}}</td>
                                     <td>{{prod.descricao}}</td>
-                                    <td>{{prod.estoque}}</td>
+                                    <td>{{prod.quantidade}}</td>
+                                    <td>{{prod.categoria.nome}}</td>
+                                    
                                     <td>
-
-
-                                        <a href=""><img class="ed" src="../../assets/img/editar.png" width="20px"
-                                                height="20px" alt=""></a>
-                                        <a href=""><img class="rm" src="../../assets/img/removido.png" width="20px"
-                                                height="20px" alt=""></a>
+                                        <a class="mr-3"><i class="ed fa fa-pencil-square-o"
+                                                aria-hidden="true"></i></a>
+                                        <a data-toggle="modal" data-target="#exampleModal"><i class="rm fa fa-trash" aria-hidden="true"></i></a>
                                     </td>
+
                                 </tr>
+                            </tbody>
+
                         </table>
                     </div>
                 </div>
@@ -167,4 +216,31 @@
         </div>
 
     </div>
+
     <!-- Acordeão -->
+</div>
+
+<!-- MODAL -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+      
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Acordeão -->
+

@@ -31,7 +31,7 @@ public class Produto {
 	private String descricao;
 	
 	@NotNull
-	private int quantidade; 
+	private int quantidade;
 	
 	@NotNull
 	private boolean promocao;

@@ -32,7 +32,7 @@ public class Usuario {
 	@NotBlank
 >>>>>>> b82b6bf6b38c77a33826ecb80131d1e70c8c44e8
 	private String senha;
-
+	
 
 	public long getCodigo() {
 		return codigo;

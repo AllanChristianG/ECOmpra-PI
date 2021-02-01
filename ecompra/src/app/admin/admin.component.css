@@ -1,8 +1,10 @@
 .ed:hover{
-    background-color: blue;
+    color: green;
+    font-size: 15pt;
 }
 .rm:hover{
-    background-color: red;
+    color: red;
+    font-size: 15pt;
 }
 #fundo{
     background-color: rgb(36, 17, 17) !important;

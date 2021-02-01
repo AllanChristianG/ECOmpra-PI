@@ -7,5 +7,5 @@ export class Produto{
     public descricao: string
     public quantidade: number
     public promocao: boolean
-    public categoria: Categoria[]
+    public categoria: Categoria
 }

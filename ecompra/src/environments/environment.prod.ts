@@ -3,6 +3,7 @@ export const environment = {
   nome: '',
   codigo: 0,
   token: '',
-  imglogo: 'https://i.imgur.com/uZ8c8KZ.png'
+  imglogo: 'https://i.imgur.com/uZ8c8KZ.png',
+  admin: ''
 
 };

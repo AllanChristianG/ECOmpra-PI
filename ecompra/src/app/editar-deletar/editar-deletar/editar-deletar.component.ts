@@ -13,16 +13,22 @@ export class EditarDeletarComponent implements OnInit {
 
   categoria: Categoria = new Categoria
   codigoCategoria: number
+
+      
+  nomeAntigo = environment.nome
+  
+
   constructor(
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute    
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
+
     let codigo = this.route.snapshot.params['codigo']
     this.findByIdCategoria(codigo)
 
