@@ -1,3 +1,7 @@
 #categoriaFonteTexto{
     --cor-verde-escuro: #007843;
 }
+
+.espacamentoCategoriaAtual{
+    margin-bottom: 54px;
+}

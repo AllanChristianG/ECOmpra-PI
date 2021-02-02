@@ -11,13 +11,13 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class EditarDeletarComponent implements OnInit {
 
+  
   categoria: Categoria = new Categoria
   codigoCategoria: number
-
-      
-  nomeAntigo = environment.nome
+  nomeAntigo: string
+  descricaoAntiga: string
+  setorAntigo: string
   
-
   constructor(
     private categoriaService: CategoriaService,
     private router: Router,
@@ -39,6 +39,9 @@ export class EditarDeletarComponent implements OnInit {
   findByIdCategoria(codigo: number){
     this.categoriaService.getByIdCategoria(codigo).subscribe((resp: Categoria) =>{
     this.categoria = resp 
+    this.nomeAntigo = this.categoria.nome
+    this.descricaoAntiga = this.categoria.descricao
+    this.setorAntigo = this.categoria.setor
     })
   }
 

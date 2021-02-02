@@ -8,10 +8,12 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class MenuComponent implements OnInit {
   imglog = environment.imglogo
-  
+  cadastro: boolean
+
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }

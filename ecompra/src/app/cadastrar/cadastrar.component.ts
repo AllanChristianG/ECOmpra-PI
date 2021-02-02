@@ -14,6 +14,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
+  
   usuario: Usuario = new Usuario
   confirmandoSenha: string //OK
   tipoUsuario: string //OK
@@ -28,8 +29,8 @@ export class CadastrarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
-     
+    window.scroll(0,0),
+    environment.paginaAtual = 'cadastro' 
   }
 
   confirmarSenha(event: any){
@@ -49,6 +50,7 @@ export class CadastrarComponent implements OnInit {
   }
   
   cadastrar(){
+    environment.paginaAtual = ''
     if(environment.token != ''){
       this.usuario.tipo = this.tipoUsuario
     }else{
@@ -78,4 +80,6 @@ export class CadastrarComponent implements OnInit {
       })
     }
   }
+
+
 }

@@ -15,6 +15,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-deletar.component';
+import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-d
     CadastrarComponent,
     InicioPosLoginComponent,
     AdminComponent,
-    EditarDeletarComponent
+    EditarDeletarComponent,
+    PaginaProdutosComponent
   ],
   imports: [
     BrowserModule,

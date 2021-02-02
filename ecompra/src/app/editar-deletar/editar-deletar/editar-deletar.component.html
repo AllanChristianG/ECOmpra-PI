@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12 d-flex justify-content-center">
-            <h2 class="text-dark"> CATEGORIA:</h2> <h2 class="text-danger ml-2">  <u> {{nomeAntigo}}  </u> </h2>
+            <h2 class="text-dark"> CATEGORIA:</h2> <h2 class="text-danger ml-2">  <u> {{nomeAntigo}} </u> </h2>
         </div>
     </div>
     <div class="row mt-5">
@@ -12,7 +12,6 @@
             <button class="btn btn-outline-danger" (click)='apagar()'>DELETAR</button>
         </div>
     </div>
-
 
     <!-- TESTE -->
 
@@ -26,22 +25,19 @@
                             <div>
                                 <div class="mb-3">
                                     <label for="inputNome" class="form-label">NOME ATUAL: </label>
-                                    <input {{nomeAntigo}} readonly type="text" class="form-control" id="inputNome"
-                                        aria-describedby="nome" placeholder="Digite aqui o novo nome da categoria">
+                                    <input readonly type="text" class="form-control" id="inputNome"
+                                        aria-describedby="nome" [placeholder]="nomeAntigo">
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputDescricao" class="form-label">DESCRIÇÃO ATUAL: </label>
-                                    <input [(ngModel)]='categoria.descricao' readonly type="text" class="form-control"
-                                        id="descricao" placeholder="Digite aqui a nova descrição da categoria">
+                                    <input readonly type="text" class="form-control"
+                                        id="descricao" [placeholder]="descricaoAntiga">
                                 </div>
-                                <div class="mb-3">
+                                <div class="espacamentoCategoriaAtual">
                                     <label for="inputNome" class="form-label">SETOR ATUAL: </label>
-                                    <input [(ngModel)]='categoria.setor' readonly type="text" class="form-control"
-                                        id="inputSetor" placeholder="Digite aqui o novo setor da categoria">
-                                </div>
-                                <div class="d-flex justify-content-end">
-                                    <button class="btn btn-outline-primary">ENVIAR</button>
-                                </div>
+                                    <input readonly type="text" class="form-control"
+                                        id="inputSetor" [placeholder]="setorAntigo">
+                                </div>                                
                             </div>
                         </div>
                     </div>

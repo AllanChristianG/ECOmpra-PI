@@ -11,21 +11,25 @@ import { environment } from './../../environments/environment.prod';
 })
 export class EntrarComponent implements OnInit {
 
+  pagina: string = 'entrar'
   usuarioLogin: UsuarioLogin = new UsuarioLogin()
   cadastroLogado: string = environment.token
-  
+
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit() {
-    window.scroll(0, 0)
+    window.scroll(0, 0),
+    environment.paginaAtual = this.pagina
   }
 
   entrar() {
+    environment.paginaAtual = ''
+
     this.authService.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin) => {
-      this.usuarioLogin = resp
+    this.usuarioLogin = resp
 
       environment.codigo = this.usuarioLogin.codigo
       environment.nome = this.usuarioLogin.nome
@@ -39,5 +43,4 @@ export class EntrarComponent implements OnInit {
       }
     })
   }
-
 }
