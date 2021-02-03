@@ -9,6 +9,10 @@
   color: #000000;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9d95ba64d1bbeb1d424eb1368db7c61810dedeb0
 .sessao-header{
   display: flex;
   align-items: center;
@@ -105,6 +109,7 @@
   font-size: 45px;
   color: #000000;
 }
+<<<<<<< HEAD
 .espacamentoCarrosselCards{
   margin-top: 50px;
 }
@@ -117,3 +122,5 @@
   font-size: 70pt;
   color: #228B22;
 }
+=======
+>>>>>>> 9d95ba64d1bbeb1d424eb1368db7c61810dedeb0
