@@ -30,5 +30,14 @@ export class AuthService {
     }
     return logadin
   }
+  
+  administrador(){
+    let adm: boolean = false
 
+    if(environment.tipoUsuario == "adm"){
+      adm = true
+    }
+
+    return adm
+  }
 }

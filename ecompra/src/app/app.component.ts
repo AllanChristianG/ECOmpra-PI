@@ -21,10 +21,10 @@ export class AppComponent {
   }
 
   aparecer(){
-    let aparecer: boolean = true
+    let aparecer: boolean = false
   
-    if(environment.paginaAtual != 'entrar' && environment.paginaAtual != 'cadastro'){
-      aparecer = false
+    if(environment.paginaAtual != 'entrar' && environment.paginaAtual != 'cadastro' && environment.paginaAtual != 'sacola'){
+      aparecer = true
     }
     return aparecer
   }

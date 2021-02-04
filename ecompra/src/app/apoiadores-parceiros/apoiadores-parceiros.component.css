@@ -1,0 +1,34 @@
+.tam{
+    height: 250px;
+    width: 250px;
+    transition: all 0.8s; 
+}
+
+.tam:hover {
+    height: 300px;
+    width: 300px;
+}
+
+.fa{
+    font-size: 35pt;
+    transition: all 0.5s;
+    color: black;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .fa:hover{
+    font-size: 40pt;
+  }
+  
+  .fa-linkedin-square:hover{
+    color: #0072b1;
+  }
+  
+  .fa-github:hover{
+    color: grey;
+  }
+
+  .teste{
+    margin-bottom: 35px;
+  }

@@ -1,15 +1,15 @@
 <!-- Formulário -->
-<div class="container-fluid">
+<div *ngIf="authService.logado() == false" class="container-fluid">
   <div class="row d-flex justify-content-center mt-5">
-      <div class="col-md-6 d-flex justify-content-center">
-          <a href=""> <img src="../../assets/logo-ok.png" class=" mg-logo img-fluid" alt=""> </a>
-      </div>
+    <div class="col-md-6 d-flex justify-content-center">
+      <a href=""> <img src="../../assets/logo-ok.png" class=" mg-logo img-fluid" alt=""> </a>
+    </div>
   </div>
 </div>
 
 <div class="container cor col-md-6 mt-4  justify-content-center">
-  <div *ngIf="admin == false">
 
+  <div>
     <h1 class="text-center">Cadastre-se</h1>
     <p class="text-center">Preencha o formulário abaixo</p>
   </div>
@@ -19,27 +19,32 @@
 
   <div class="form-row d-flex justify-content-center">
     <div class="col-md-6 ">
+
       <div class="form-group">
         <label for="nome">Nome:</label>
-        <input [(ngModel)]='usuario.nome' (input)='validandoNomeReal($event)' type="text" class="form-control" id="nome" placeholder="Digite aqui seu nome">
+        <input [(ngModel)]='usuario.nome' (input)='validandoNomeReal($event)' type="text" class="form-control" id="nome"
+          placeholder="Digite aqui seu nome">
       </div>
+
       <div class="form-group">
         <label for="usuarioFormulario">Usuário:</label>
-        <input [(ngModel)]='usuario.usuario' (input)='validandoNomeUsuario($event)' type="text" class="form-control" id="usuarioFormulario"
-          placeholder="Digite aqui seu usuário">
+        <input [(ngModel)]='usuario.usuario' (input)='validandoNomeUsuario($event)' type="text" class="form-control"
+          id="usuarioFormulario" placeholder="Digite aqui seu usuário">
       </div>
+
       <div class="form-group">
         <label for="senha">Senha:</label>
         <input (input)='confirmarSenha($event)' type="password" class="form-control" id="senha"
           placeholder="Digite aqui sua senha">
       </div>
+
       <div class="form-group">
         <label for="senhaConfirmacao">Confirmar senha:</label>
         <input [(ngModel)]='usuario.senha' type="password" class="form-control" id="senhaConfirmacao"
           placeholder="Confirmar senha">
       </div>
-      
-      <div class="form-group" *ngIf = "authService.logado()">
+
+      <div class="form-group" *ngIf="authService.logado()">
         <label for="tipoUsuario">Tipo usuário:</label>
         <select class="form-control" (change)='tipoUsuarioMetodo($event)'>
           <option value="ausente">Selecione o usuário</option>
@@ -53,12 +58,12 @@
         <button type="submit" class="btn btn-outline-success" onkeydown="" id="botaoEntrar"
           (click)='cadastrar()'>Cadastrar</button>
       </div>
+
     </div>
   </div>
 
-<!-- Fim do formulário -->
+  <!-- Fim do formulário -->
 
 
 
 </div>
-

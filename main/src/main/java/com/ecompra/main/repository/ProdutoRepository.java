@@ -13,4 +13,7 @@ import com.ecompra.main.model.Produto;
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	@Query(value = "select*from tb_produto where nome = :nome", nativeQuery = true)
 	public List<Produto> findAllByNome(@Param ("nome") String nome);
+	@Query(value = "select*from tb_produto where promocao = true", nativeQuery = true)
+	public List<Produto> findAllByPromocao();
+	
 }

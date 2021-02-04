@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300;400&family=Gruppo&family=M+PLUS+Rounded+1c:wght@300;400&family=Nanum+Pen+Script&family=Raleway:ital,wght@1,200;1,300&display=swap');
+*{
+    font-family: 'Advent Pro', sans-serif;
+    font-family: 'Gruppo', cursive;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Raleway', sans-serif;
+}
 :root{
     --cor-verde-claro: rgb(0,179,74);
     --cor-verde-escuro: rgb(0,120,67);
     --degradep: rgb(197, 197, 197);
     --degrades: #fff;
+}
+
+.img-logo{
+    width: 290px;
+    height: 88px;
 }

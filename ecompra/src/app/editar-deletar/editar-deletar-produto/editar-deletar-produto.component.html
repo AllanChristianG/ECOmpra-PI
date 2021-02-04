@@ -1,0 +1,176 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            <h2 class="text-dark">PRODUTO:</h2>
+            <h2 class="text-danger ml-2"><u>{{nomeProduto}}</u></h2>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-12 d-flex justify-content-between">
+            <button routerLink="/admin" class="btn btn-outline-secondary">VOLTAR</button>
+            <a class="btn btn-outline-warning" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                aria-expanded="false" aria-controls="multiCollapseExample1"> ATUALIZAR </a>
+            <button class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmaCancela" >DELETAR</button>
+        </div>
+    </div>
+
+    <!-- TESTE -->
+
+    <div class="row d-flex justify-content-center mt-5">
+
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            <div>
+
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label">NOME ATUAL: </label>
+                                    <input readonly type="text" class="form-control" id="inputNome"
+                                        aria-describedby="nome" [placeholder]="nomeProduto">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="preco" class="form-label">PREÇO: </label>
+                                    <input readonly type="text" class="form-control" id="preco"
+                                        [placeholder]="precoProduto">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="drescicao" class="form-label">DESCRIÇÃO: </label>
+                                    <input readonly type="text" class="form-control" id="drescicao"
+                                        [placeholder]="descricaoProduto">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="inputNome" class="form-label">QUANTIDADE: </label>
+                                    <input readonly type="text" class="form-control" id="quantidade"
+                                        [placeholder]="quantidadeProduto">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="promocao" class="form-label">PROMOÇÃO: </label>
+                                    <input readonly type="text" class="form-control" id="promocao"
+                                        [placeholder]="promocaoProdutoFinal">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="categoria" class="form-label">CATEGORIA: </label>
+                                    <input readonly type="text" class="form-control" id="categoria"
+                                        [placeholder]="categoriaProduto">
+                                </div>
+
+                                <div class="espacamentoCategoriaAtual">
+                                    <label for="foto" class="form-label">FOTO: </label>
+                                    <input readonly type="text" class="form-control" id="foto"
+                                        [placeholder]="fotoProduto">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            <div>
+
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label">NOVO NOME: </label>
+                                    <input [(ngModel)]="produto.nome" type="text" class="form-control" id="nome"
+                                        aria-describedby="nome" placeholder="Digite aqui o novo nome da categoria">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="preco" class="form-label">NOVA PREÇO: </label>
+                                    <input [(ngModel)]="produto.preco" type="text" class="form-control" id="preco"
+                                        placeholder="Digite aqui a nova descrição da categoria">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="descricao" class="form-label">NOVA DESCRIÇÃO: </label>
+                                    <input [(ngModel)]="produto.descricao" type="text" class="form-control"
+                                        id="descricao" placeholder="Digite aqui o novo setor da categoria">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="quantidade" class="form-label">NOVA QUANTIDADE: </label>
+                                    <input [(ngModel)]="produto.quantidade" type="text" class="form-control"
+                                        id="quantidade" placeholder="Digite aqui o novo setor da categoria">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="promocao" class="form-label">PROMOÇÃO: </label>
+                                    <select [(ngModel)]="produto.promocao" type="text" class="form-control"
+                                        id="promocao" placeholder="Digite aqui o novo setor da categoria"
+                                        (change)="validaPromo($event)">
+                                        <option value="selecione">Selecione uma opção</option>
+                                        <option value="true">Sim</option>
+                                        <option value="false">Não</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="categoria" class="form-label">NOVA CATEGORIA: </label>
+                                    <select [(ngModel)]="idCat" type="text" class="form-control" id="categoria"
+                                        placeholder="Digite aqui o novo setor da categoria"
+                                        (change)="getCategoriaById()">
+
+                                        <option *ngFor="let cat of listaCategoria" [value]="cat.codigo">
+                                            {{cat.descricao}}</option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="foto" class="form-label">NOVA FOTO: </label>
+                                    <input [(ngModel)]="produto.foto" type="text" class="form-control" id="foto"
+                                        placeholder="Digite aqui o novo setor da categoria">
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <button class="btn btn-outline-danger">LIMPAR</button>
+                                    <button class="btn btn-outline-success" (click)="putProduto()">ENVIAR</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmaCancela" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="delete">Deletar produto: {{nomeProduto}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Essa ação não pode ser desfeita. Deseja continuar?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click) = "deletarProduto(codigoProduto)">Sim, deletar</button>
+        </div>
+      </div>
+    </div>
+  </div>

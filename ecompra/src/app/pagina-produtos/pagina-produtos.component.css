@@ -1,0 +1,97 @@
+.card{
+    width: 20rem;
+    height: 20rem;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #4b4b4b;
+    border-radius: 0.5rem;
+  }
+  
+  .card-img-wrapper img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    opacity: .8;
+    transition: opacity .5s;
+  }
+  
+  .card:hover .card-img-wrapper img{
+    opacity: .5;
+  }
+  
+  .card-info{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0,0.6);
+    transition: all 0.5s;
+  }
+  
+  .card-info h2{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #eee;
+  }
+  
+  .card-info h3{
+    font-weight: bold;
+    color: #34af23;
+    margin-bottom: 1rem;
+  }
+  
+  .card-info p{
+    color: #eee;
+    font-weight: 400;
+    width:80%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn-1{
+    color: #eee;
+    border-radius: .5rem;
+    border: none;
+    box-shadow: 0 .1rem .8rem rgba(0, 0, 0,0.4);
+  }
+  
+  .card-info button{
+    background: #34af23;
+    width: 8rem;
+    height: 2.5rem;
+  }
+  
+  .card-info button:hover{
+    width: 8.3rem;
+    height: 2.8rem;
+  }
+  
+  .card:hover .card-info{
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modalBg{
+    background-color: white !important;
+  }
+
+  .margemTituloBotao{
+    margin-top: 20%;
+  }
+
+  .imagemModalProduto{
+    width: 200px;
+    height: 200px;
+  }
+ 
+  .alinhamentoTituloProduto{
+    justify-content: center;
+    font-size: 20px;
+    
+  }

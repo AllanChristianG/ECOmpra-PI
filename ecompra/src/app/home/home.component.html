@@ -1,7 +1,4 @@
-<div class="novidades pt-5">
-  <p>NOVIDADES</p>
-</div>
-
+<div class="container-fluid">
 <!-- Início do Carrossel -->
 <div id="carouselExampleCaptions" class="carousel slide container-fluid d-fluid" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -11,28 +8,28 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://image.shutterstock.com/image-vector/chinese-new-year-2018-dog-260nw-1010298037.jpg"
-        class="d-block w-100" alt="...">
+      <img src="../../assets/img/CarrosselHome/viga.jpg"
+        class="d-block w-100 img-fluid" alt="...">
 
       <div class="carousel-caption d-none d-md-block">
-        <h5>Raposa com lenço vermelho</h5>
-        <p>O fundo está vermelho, porém com uma tonalidade diferente</p>
+        <!-- <h5>Raposa com lenço vermelho</h5>
+        <p>O fundo está vermelho, porém com uma tonalidade diferente</p> -->
 
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://image.shutterstock.com/image-vector/chinese-new-year-2018-dog-260nw-1012274755.jpg"
-        class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Dragão colorido</h5>
-        <p>O fundo está vermelho</p>
+      <img src="../../assets/img/CarrosselHome/hakjdhDLSAHFLA.jpg"
+        class="d-block w-100 img-fluid" alt="...">
+      <div class="carousel-caption d-none d-md-block  ">
+        <!-- <h5>Dragão colorido</h5>
+        <p>O fundo está vermelho</p> -->
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://coverfiles.alphacoders.com/398/39842.jpg" class="d-block w-100" alt="...">
+      <img src="../../assets/img/CarrosselHome/make.jpg" class="d-block w-100 img-fluid" alt="...">
       <div class="carousel-caption d-none d-md-block">
-        <h5>Bolo de chocolate com cereja </h5>
-        <p>Esse bolo está dando água na boca</p>
+        <!-- <h5>Bolo de chocolate com cereja </h5>
+        <p>Esse bolo está dando água na boca</p> -->
       </div>
     </div>
 <<<<<<< HEAD
@@ -53,11 +50,9 @@
 <!-- /carrossel -->
 
 <!-- produtos -->
-<div class="novidades mt-5">
-  <p>PRODUTOS</p>
-</div>
 
-<hr class='container espacamentoCarrosselCards'>
+<!-- 
+<hr class='container espacamentoCarrosselCards'> -->
 
 <<<<<<< HEAD
 =======
@@ -73,19 +68,17 @@
 >>>>>>> 9d95ba64d1bbeb1d424eb1368db7c61810dedeb0
 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
-  <!--indicadores-->
-  <ol class="carousel-indicators">
-    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-    <li data-target="#multi-item-example" data-slide-to="1"></li>
-  </ol>
-  <!--/indicadores-->
 
-  <div class="row">
-    <div class="col-md-12 d-fluid justify-content-center">
+  <div *ngIf='listPromo.length > 3' class="row">
+    <div  class="col-md-12 d-fluid justify-content-center">
       <!--controles-->
-      <div class="controls-top d-flex  justify-content-around align-items-center">
-        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-circle-left"
+      <div class="controls-top d-flex justify-content-around align-items-center">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-arrow-circle-left "
             aria-hidden="true"></i></a>
+            <div class="novidades mt-5 d-flex align-items-center">
+              <p>PRODUTOS</p>
+            </div>
+
         <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-arrow-circle-right"
             aria-hidden="true"></i></a>
       </div>
@@ -96,43 +89,20 @@
   <div class="carousel-inner" role="listbox">
 
     <!--primeiro slide-->
-    <div class="carousel-item active">
+    <div *ngIf='listPromo.length > 0' class="carousel-item active">
       <div class="container-fluid justify-content-center">
         <div class="row d-flex justify-content-around">
 
-          <div class="card shadow-lg rounded">
-            <div class="card-img-wrapper">
-              <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.09.34.jpeg" alt="">
-            </div>
-            <div class="card-info">
-              <h2>Copos De silicone</h2>
-              <h3>Itens de cozinha</h3>
-              <p>Copos feitos de silicone para evitar o desperdicio de plastico dos copos descartáveis</p>
-              <button class="btn">Saiba mais</button>
-            </div>
-          </div>
-
-          <div class="card shadow-lg">
-            <div class="card-img-wrapper">
-              <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.09.35.jpeg" alt="">
-            </div>
-            <div class="card-info">
-              <h2>Escova de bambu</h2>
-              <h3>Higiene pessoal</h3>
-              <p>Escovas de bambu para que o descarte não afete o meio ambiente</p>
-              <button class="btn">Saiba mais</button>
-            </div>
-          </div>
-
-          <div class="card shadow-lg">
-            <div class="card-img-wrapper">
-              <img src="../../assets/img/cards/WhatsApp Image 2021-01-21 at 16.10.45.jpeg" alt="">
-            </div>
-            <div class="card-info">
-              <h2>Xampu vegano</h2>
-              <h3>Higiene pessoal</h3>
-              <p>Xampu não testado em animais</p>
-              <button class="btn">Saiba mais</button>
+          <div class="col-md-4 d-flex justify-content-center" style="float:left" *ngFor='let i of listPromo | slice:0:3' >
+            <div class="card">
+              <div class="card-img-wrapper">
+                <img src="{{i.foto}}" alt="">
+              </div>
+              <div class="card-info">
+                <h3>{{i.nome}}</h3>
+                <p>{{i.descricao}}</p>
+                <button class="btn" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
+              </div>
             </div>
           </div>
 
@@ -140,71 +110,70 @@
       </div>
     </div>
     <!--/primeiro slide-->
+    <!-- Segundo Slide -->
+    <div *ngIf='listPromo.length > 3' class="carousel-item">
+      <div class="container-fluid justify-content-center">
+        <div class="row d-flex justify-content-around">
 
-    <!--segundo slide-->
-    <div class="carousel-item">
+          <div class="col-md-4 d-flex justify-content-center" style="float:left" *ngFor='let i of listPromo | slice:3:6' >
+            <div class="card">
+              <div class="card-img-wrapper">
+                <img src="{{i.foto}}" alt="">
+              </div>
+              <div class="card-info">
+                <h3>{{i.nome}}</h3>
+                <p>{{i.descricao}}</p>
+                <button class="btn" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
+              </div>
+            </div>
+          </div>
 
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-        <div class="card shadow-lg rounded">
-          <div class="card-img-wrapper">
-            <img src="../../assets/img/cards/Nerd-cuate.png" alt="">
-          </div>
-          <div class="card-info">
-            <h2>Ecobox do Patrulheiro</h2>
-            <p>Descrição</p>
-            <button class="btn btn-outline-success">Saiba mais</button>
-          </div>
         </div>
       </div>
-
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-        <div class="card shadow-lg">
-          <div class="card-img-wrapper">
-            <img src="../../assets/img/cards/Knowledge.gif" alt="">
-          </div>
-          <div class="card-info">
-            <h2>Ecobox do Explorador</h2>
-
-            <p>Descrição</p>
-            <button class="btn btn-outline-success">YUKE</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 d-flex justify-content-center" style="float:left">
-        <div class="card shadow-lg">
-          <div class="card-img-wrapper">
-            <img src="../../assets/img/cards/Science.gif" alt="">
-          </div>
-          <div class="card-info">
-            <h2>Ecobox do Biólogo</h2>
-
-            <p>Descrição</p>
-            <button class="btn">Saiba mais</button>
-          </div>
-        </div>
-      </div>
-
     </div>
-    <!--/segundo slide-->
+
+
+    <!-- /Segundo Slide -->
+    <!-- Terceiro Slide -->
+    <div *ngIf='listPromo.length > 6' class="carousel-item">
+      <div class="container-fluid justify-content-center">
+        <div class="row d-flex justify-content-around">
+
+          <div class="col-md-4 d-flex justify-content-center" style="float:left" *ngFor='let i of listPromo | slice:6:9' >
+            <div class="card">
+              <div class="card-img-wrapper">
+                <img src="{{i.foto}}" alt="">
+              </div>
+              <div class="card-info">
+                <h3>{{i.nome}}</h3>
+                <p>{{i.descricao}}</p>
+                <button class="btn" data-toggle="modal" data-target="#saibaMais" (click) = "getProdutoById(i.codigo)">Saiba Mais</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Terceiro Slide -->
+
   </div>
   <!--/slides-->
-  <!--/carrossel de cards-->
 </div>
 
 <<<<<<< HEAD
 <!--ECOBOX-->
-<div class="novidades mt-5">
+<div class="novidades mt-5" id="ecobox">
   <p>ECOBOX</p>
 </div>
-<hr class="container espacamentoCarrosselCards">
+<!-- <hr class="container espacamentoCarrosselCards"> -->
 <div class="container-fluid justify-content-center">
 
   <div class="row d-flex justify-content-around">
 
-    <div class="card shadow-lg rounded">
+    <div class="card">
       <div class="card-img-wrapper">
-        <img src="../../assets/img/cards/Nerd-cuate.png" alt="">
+        <img src="../../assets/img/cards/Journey.gif" alt="">
       </div>
       <div class="card-info">
         <h2>Ecobox do Patrulheiro</h2>
@@ -213,9 +182,9 @@
       </div>
     </div>
 
-    <div class="card shadow-lg">
+    <div class="card">
       <div class="card-img-wrapper">
-        <img src="../../assets/img/cards/Knowledge.gif" alt="">
+        <img src="../../assets/img/cards/Around the world.gif" alt="">
       </div>
       <div class="card-info">
         <h2>Ecobox do Explorador</h2>
@@ -225,7 +194,7 @@
       </div>
     </div>
 
-    <div class="card shadow-lg">
+    <div class="card">
       <div class="card-img-wrapper">
         <img src="../../assets/img/cards/Science.gif" alt="">
       </div>
@@ -239,9 +208,52 @@
   </div>
 </div>
 <!-- /ECOBOX -->
+<<<<<<< HEAD
 =======
 
   
   </div>
 </div>
 >>>>>>> 9d95ba64d1bbeb1d424eb1368db7c61810dedeb0
+=======
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="saibaMais" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-header ">
+        <div class="row">
+          <h5 class="modal-title text-uppercase" id="staticBackdropLabel">{{nomeProduto}}</h5>
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-4">
+            <img [src]="fotoProduto" class="imagemModalProduto">
+          </div>
+          <div class="col-md-8">
+            <span class="center-block"></span>
+          </div>
+        </div>
+        <div class="row mt-12">
+            <div class="col-md-12 text-success d-flex justify-content-end">
+              Preço: RS{{precoProduto}} 
+            </div>
+        </div>
+      </div>    
+      <div class="modal-footer d-flex justify-content-between">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Voltar</button>
+        <button type="button" class="btn btn-outline-success" data-dismiss="modal" [routerLink]="['/sacola-comprar', idProduto]">Comprar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+>>>>>>> carrossel

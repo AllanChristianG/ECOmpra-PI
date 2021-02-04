@@ -33,7 +33,9 @@ public class Usuario {
 >>>>>>> b82b6bf6b38c77a33826ecb80131d1e70c8c44e8
 	private String senha;
 	
-
+	private String tipoUsuario;
+	
+	
 	public long getCodigo() {
 		return codigo;
 	}
@@ -71,6 +73,16 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 	

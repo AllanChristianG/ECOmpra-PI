@@ -28,6 +28,8 @@ a:hover{
 
 .fa{
     font-size: 40pt;
+    color: black;
+    transition: all 0.2s;
 }
 
 .fa:hover{

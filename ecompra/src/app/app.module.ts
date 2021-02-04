@@ -12,10 +12,16 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { InicioPosLoginComponent } from './inicio-pos-login/inicio-pos-login.component';
 import { AdminComponent } from './admin/admin.component';
 import { EditarDeletarComponent } from './editar-deletar/editar-deletar/editar-deletar.component';
 import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.component';
+import { EditarDeletarProdutoComponent } from './editar-deletar/editar-deletar-produto/editar-deletar-produto.component';
+
+import { ApoiadoresParceirosComponent } from './apoiadores-parceiros/apoiadores-parceiros.component';
+import { SacolaCompraComponent } from './sacola-compra/sacola-compra.component';
+import { AlertsComponent } from './alerts/alerts.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 @NgModule({
@@ -28,16 +34,24 @@ import { PaginaProdutosComponent } from './pagina-produtos/pagina-produtos.compo
     ContatoComponent,
     EntrarComponent,
     CadastrarComponent,
-    InicioPosLoginComponent,
     AdminComponent,
     EditarDeletarComponent,
-    PaginaProdutosComponent
+    PaginaProdutosComponent,
+    EditarDeletarProdutoComponent,
+
+    ApoiadoresParceirosComponent,
+
+    SacolaCompraComponent,
+
+    AlertsComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

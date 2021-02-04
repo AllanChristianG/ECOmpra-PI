@@ -1,1 +1,91 @@
-<p>pagina-produtos works!</p>
+<div class="row mt-5 ">
+  <div class="col-md-2">
+    <div class="nav flex-column nav-pills container text-center" id="v-pills-tab" role="tablist"
+      aria-orientation="vertical">
+      <a class="nav-link active mb-3 ml-3" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+        aria-controls="v-pills-home" aria-selected="true">Todos os Produtos</a>
+
+      <a *ngFor='let i of listaCategorias' (click)='findByIdCategoria(i.codigo)' class="nav-link mb-3 ml-3"
+        id="v-pills-categoria-tab" data-toggle="pill" href="#v-pills-categoria" role="tab"
+        aria-controls="v-pills-categoria" aria-selected="true">{{i.nome}}</a>
+
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="card-columns">
+          <div class="card shadow-lg rounded" *ngFor='let p of listaProdutos'>
+            <div class="card-img-wrapper">
+              <img src="{{p.foto}}" alt="">
+            </div>
+            <div class="card-info">
+              <h2 class='text-uppercase'>{{p.nome}}</h2>
+              <button class="btn-1 margemTituloBotao" (click)="getProdutoById(p.codigo)" data-toggle="modal" data-target="#saibaMais">Saiba
+                mais</button>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="tab-pane fade" id="v-pills-categoria" role="tabpanel" aria-labelledby="v-pills-categoria-tab">
+
+        <div class="card-columns">
+          <div class="card shadow-lg rounded" *ngFor='let c of listaCatProd'>
+            <div class="card-img-wrapper">
+              <img src="{{c.foto}}" alt="">
+            </div>
+            <div class="card-info">
+              <h2 class='text-uppercase'>{{c.nome}}</h2>
+              <button class="btn-1 margemTituloBotao" (click)="getProdutoById(c.codigo)" data-toggle="modal" data-target="#saibaMais">Saiba
+                mais</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="saibaMais" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-header ">
+        <div class="row">
+          <h5 class="modal-title text-uppercase" id="staticBackdropLabel"> {{nomeProduto}} </h5>
+        </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-4">
+            <img src="{{fotoProduto}}" class="imagemModalProduto">
+          </div>
+          <div class="col-md-8">
+            <span class="center-block">{{descricaoProduto}}</span>
+          </div>
+        </div>
+        <div class="row mt-12">
+            <div class="col-md-12 text-success d-flex justify-content-end">
+              Preço: RS {{precoProduto}} 
+            </div>
+        </div>
+      </div>    
+      <div class="modal-footer d-flex justify-content-between">
+        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Voltar</button>
+        <button type="button" class="btn btn-outline-success" data-dismiss="modal" [routerLink]="['/sacola-comprar', idProduto]">Comprar</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -2,9 +2,17 @@
     background-color: cadetblue;
 }
 
-/* .img-logo{
-    width: ;
-} */
+@media (max-width: 769px){
+    #botton{
+        margin: 10px;
+    }
+    #pesquisar{
+        margin-left: 10px;
+    }
+    #entrar{
+       margin-top: 10px;
+    }
+}
 
 .fa{
     font-size: 30pt;
@@ -42,4 +50,13 @@
     width: 55px;
     margin-bottom: 0px;
 
+}
+
+#sair{
+    text-decoration: none;
+    color: green;
+}
+
+#sair:hover{
+    color:greenyellow;
 }

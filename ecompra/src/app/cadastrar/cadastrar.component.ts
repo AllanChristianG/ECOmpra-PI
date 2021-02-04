@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { Categoria } from '../model/Categoria';
 import { Usuario } from '../model/Usuario';
+import { AlertsService } from '../service/alerts.service';
 import { AuthService } from '../service/auth.service';
 
 
@@ -25,12 +24,17 @@ export class CadastrarComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alertas : AlertsService
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0),
-    environment.paginaAtual = 'cadastro' 
+    window.scroll(0,0)
+
+    if(environment.paginaAtual != "admin"){
+      environment.paginaAtual = 'cadastro'
+    } 
+
   }
 
   confirmarSenha(event: any){
@@ -50,36 +54,43 @@ export class CadastrarComponent implements OnInit {
   }
   
   cadastrar(){
-    environment.paginaAtual = ''
-    if(environment.token != ''){
-      this.usuario.tipo = this.tipoUsuario
+    if(environment.tipoUsuario == 'administrador'){
+      this.usuario.tipoUsuario = this.tipoUsuario
     }else{
-      this.usuario.tipo = "normal" //OK
+      this.usuario.tipoUsuario = "normal" //OK
     }
 
     this.usuario.nome = this.nomeUsuarioReal //OK
     this.usuario.usuario = this.usuarioFormulario //OK
 
     if(this.usuario.senha != this.confirmandoSenha){
-      alert('As senhas não conferem!')
+      this.alertas.showAlertDanger('As senhas não conferem!')
     }else if(this.usuario.senha.length <= 5){
-      alert('Sua senha deve ter mais que 5 caracteres!')
+      this.alertas.showAlertDanger('Sua senha deve ter mais que 5 caracteres!')
     }
     else if(this.usuario.nome.length <= 2){
-      alert('Insira um nome maior que 2 caracteres')
+      this.alertas.showAlertDanger('Insira um nome maior que 2 caracteres')
     }else if(this.usuario.usuario.length <= 4){
-      alert('Insira um usuário maior que 4 caracteres')
-    }else if(this.usuario.tipo === null || this.usuario.tipo === undefined){
-      alert('Escolha um tipo de usuário!')
+      this.alertas.showAlertDanger('Insira um usuário maior que 4 caracteres')
+    }else if(this.usuario.tipoUsuario === null || this.usuario.tipoUsuario === undefined){
+      this.alertas.showAlertDanger('Escolha um tipo de usuário!')
     }else{
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
 
+        
+        if(environment.paginaAtual == "admin"){
+          this.alertas.showAlertSuccess('Cadastro realizado com sucesso!')
+          this.usuario = new Usuario()
+          this.confirmandoSenha = ''
+        }else{
         this.router.navigate(['/entrar'])
-        alert('Cadastro realizado com sucesso!')
+        this.alertas.showAlertSuccess('Cadastro realizado com sucesso!')
+        }
+        
+        environment.paginaAtual = ''
+        
       })
     }
   }
-
-
 }

@@ -2,7 +2,6 @@
 /* #fundo {
   background-color: #fff;
 } */
-
 .novidades {
   text-align: center;
   font-size: 45px;
@@ -114,13 +113,21 @@
   margin-top: 50px;
 }
 .fa{
-  font-size: 60pt;
+  font-size: 40pt;
   color: #008000;
   transition: all 0.5s;
 }
 .fa:hover{
-  font-size: 70pt;
+  font-size: 45pt;
   color: #228B22;
 }
+<<<<<<< HEAD
 =======
 >>>>>>> 9d95ba64d1bbeb1d424eb1368db7c61810dedeb0
+=======
+
+.tamCarrossel{
+  right: 100px;
+  width: 300px;
+}
+>>>>>>> carrossel

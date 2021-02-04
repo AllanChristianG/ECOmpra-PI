@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
+import { AlertsService } from '../service/alerts.service';
 
 
 @Component({
@@ -16,12 +17,14 @@ import { ProdutoService } from '../service/produto.service';
 export class AdminComponent implements OnInit {
 
   produto: Produto = new Produto
+  
   listProdutos: Produto[]
 
   categoria: Categoria = new Categoria
   listaCategoria: Categoria[]
 
   promo: string
+  promoExibe: string
   promoFinal: boolean
   idCat: number
   categoriaProduto: Categoria
@@ -29,11 +32,14 @@ export class AdminComponent implements OnInit {
   constructor (
     private router: Router,
     private categriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private alertas : AlertsService
 
   ) {}
 
   ngOnInit() {
+    environment.paginaAtual = "admin"
+
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
@@ -57,7 +63,7 @@ export class AdminComponent implements OnInit {
   }
 
   findByIdCategoria(){
-    this.categriaService.getById(this.idCat).subscribe((resp: Categoria) => {
+    this.categriaService.getByIdCategoria(this.idCat).subscribe((resp: Categoria) => {
       this.categoriaProduto = resp
     })
   }
@@ -65,7 +71,7 @@ export class AdminComponent implements OnInit {
   cadastrar(){
     this.categriaService.postCategoria(this.categoria).subscribe((resp: Categoria)=> {
       this.categoria = resp 
-      alert('Categoria Cadastrada com sucesso!')
+      this.alertas.showAlertSuccess('Categoria Cadastrada com sucesso!')
       this.findAllCadastrar()
       this.categoria = new Categoria()
     })
@@ -77,15 +83,15 @@ export class AdminComponent implements OnInit {
     })
   }
 
-  cadastrarProduto(){
+  cadastrarProduto(){    
     this.categoriaProduto.codigo = this.idCat
     
     this.produto.categoria = this.categoriaProduto
     this.produto.promocao = this.promoFinal
-
+    
     this.produtoService.postProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert("Produto cadastrado com sucesso!")
+      this.alertas.showAlertSuccess("Produto cadastrado com sucesso!")
       this.findAllProdutos()
       this.produto = new Produto()
 

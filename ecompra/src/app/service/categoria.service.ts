@@ -25,11 +25,6 @@ export class CategoriaService {
 
   }
 
-  getById(codigo: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`http://localhost:8080/categoria/${codigo}`, this.token)
-  }
-
-
   postCategoria(categoria: Categoria): Observable<Categoria> {
     return this.http.post<Categoria>('http://localhost:8080/categoria', categoria, this.token)
     }

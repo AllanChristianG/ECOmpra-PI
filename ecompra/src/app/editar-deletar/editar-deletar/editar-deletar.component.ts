@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
+import { AlertsService } from 'src/app/service/alerts.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -14,6 +15,7 @@ export class EditarDeletarComponent implements OnInit {
   
   categoria: Categoria = new Categoria
   codigoCategoria: number
+  codigoCategoriaDeletar: number
   nomeAntigo: string
   descricaoAntiga: string
   setorAntigo: string
@@ -21,7 +23,8 @@ export class EditarDeletarComponent implements OnInit {
   constructor(
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertsService
   ) { }
 
   ngOnInit() {
@@ -39,6 +42,8 @@ export class EditarDeletarComponent implements OnInit {
   findByIdCategoria(codigo: number){
     this.categoriaService.getByIdCategoria(codigo).subscribe((resp: Categoria) =>{
     this.categoria = resp 
+
+    this.codigoCategoriaDeletar = this.categoria.codigo
     this.nomeAntigo = this.categoria.nome
     this.descricaoAntiga = this.categoria.descricao
     this.setorAntigo = this.categoria.setor
@@ -48,15 +53,21 @@ export class EditarDeletarComponent implements OnInit {
   atualizar(){
     this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) =>{
       this.categoria = resp
-      alert('Tema atualizado com sucesso!')
+      this.alertas.showAlertSuccess('Tema atualizado com sucesso!')
       this.router.navigate(['/admin'])
     })
   }
 
-  apagar(){
-    this.categoriaService.deleteCategoria(this.codigoCategoria).subscribe(()=>{
-      alert('Categoria apagada com sucesso!')
+  apagar(id: number){
+    this.categoriaService.deleteCategoria(id).subscribe(()=>{
+      this.alertas.showAlertSuccess('Categoria apagada com sucesso!')
       this.router.navigate(['/admin'])
     })
+  }
+
+  limpar(){
+    this.alertas.showAlertInfo
+    ('Limpeza realizada com sucesso!')
+
   }
 }

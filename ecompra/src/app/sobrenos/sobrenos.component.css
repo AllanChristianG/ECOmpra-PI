@@ -11,10 +11,34 @@
 .devs img {
   height: 250px;
   width: 250px;             /*Img dos devs*/
-  transition: all 1s;
+  transition: all 0.8s;
 }
 
 .devs img:hover {
   height: 300px;            /*IMG com hover*/
   width: 300px;
+}
+
+.fa{
+  font-size: 35pt;
+  transition: all 0.5s;
+  color: black;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.fa:hover{
+  font-size: 40pt;
+}
+
+.fa-linkedin-square:hover{
+  color: #0072b1;
+}
+
+.fa-github:hover{
+  color: grey;
+}
+
+.valores p{
+  font-size: 13.2pt;
 }

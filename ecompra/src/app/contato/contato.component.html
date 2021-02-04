@@ -1,15 +1,15 @@
-<div class="container-fluid mb-5 mt-3">
+<div class="container-fluid mb-5 mt-3" id="contato">
   <div class="row">
     <div class="col-md-3 ">
 
       <div class="container-flud mt"></div>
 
-        <!-- horario de funcionamento -->
+      <!-- horario de funcionamento -->
 
       <h2>Horário de funcionamento</h2>
       <p>Nossos atendimentos e retornos são realizados de segunda à sexta-feira, no período de 09h00 às 17h00.</p>
 
-        <!-- redes sociais -->
+      <!-- redes sociais -->
 
       <ul class="social">
         <li>
@@ -46,48 +46,58 @@
       <h1 class="text-left">Envie sua mensagem</h1>
       <p>Se precisa falar com alguém da nossa equipe é só entrar em contato preenchendo os campos abaixo, vamos te
         responder o quanto antes. Pode ter certeza: é sempre um prazer falar com você! </p>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="nome">Nome</label>
-            <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+      <form>
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input class="form-control" type="email" name="email" id="email" placeholder="Seu E-mail">
+            </div>
+
+            <div class="form-group">
+              <label for="tel">Seu número de telefone</label>
+              <input class="form-control" type="tel" name="tel" id="tel" placeholder="Seu número de telefone">
+            </div>
+
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <select class="form-control" name="tipo" id="tipo">
+                <option>Selecione uma opção</option>
+                <option value="ecoBox">Eco-box</option>
+                <option value="produtos">Produtos</option>
+                <option value="entrega">Prazos e Entregas</option>
+                <option value="reclamacoes">Reclamações</option>
+                <option value="outros">Outros</option>
+              </select>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input class="form-control" type="email" name="email" id="email" placeholder="Seu E-mail">
-          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="mem">Mensagem</label>
+              <textarea class="form-control" name="mem" id="mem" cols="30" rows="10"
+                placeholder="Deixe sua mensagem"></textarea>
+            </div>
+            <div>
+              <button type="reset" class="btn btn-success" (click)='enviar()'>Envie sua mensagem</button>
+            </div>
 
-          <div class="form-group">
-            <label for="tel">Seu número de telefone</label>
-            <input class="form-control" type="tel" name="tel" id="tel" placeholder="Seu número de telefone">
           </div>
+        </div> <!--  ok -->
+      </form>
 
-          <div class="form-group">
-            <label for="assunto">Assunto</label>
-            <select class="form-control" name="tipo" id="tipo">
-              <option>Selecione uma opção</option>
-              <option value="ecoBox">Eco-box</option>
-              <option value="produtos">Produtos</option>
-              <option value="entrega">Prazos e Entregas</option>
-              <option value="reclamacoes">Reclamações</option>
-              <option value="outros">Outros</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="mem">Mensagem</label>
-            <textarea class="form-control" name="mem" id="mem" cols="30" rows="10"
-              placeholder="Deixe sua mensagem"></textarea>
-          </div>
-          <div>
-            <button type="submit" class="btn btn-success">Envie sua mensagem</button>
-          </div>
-        </div>
-      </div>
-      <!-- formulario de contato -->
     </div>
   </div>
+
+
+  <!-- formulario de contato -->
+
+
 </div>

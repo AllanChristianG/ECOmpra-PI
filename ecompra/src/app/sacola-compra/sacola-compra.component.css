@@ -1,0 +1,8 @@
+.fa{
+    color: var(--cor-verde-claro);
+}
+.fa:hover{
+    
+    font-size: 30pt;
+    color: var(--cor-verde-escuro)
+}

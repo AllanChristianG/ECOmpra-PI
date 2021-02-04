@@ -31,7 +31,6 @@ public class UsuarioService {
 		}else {
 			return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
 		}
-		
 		 
 	} 
 	
@@ -49,7 +48,7 @@ public class UsuarioService {
 				user.get().setToken(authHeader);
 				user.get().setUsuario(usuario.get().getUsuario());
 				user.get().setNome(usuario.get().getNome());
-				
+				user.get().setTipoUsuario(usuario.get().getTipoUsuario());
 				
 				return user;
 			}

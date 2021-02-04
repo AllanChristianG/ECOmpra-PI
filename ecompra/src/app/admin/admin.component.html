@@ -1,4 +1,5 @@
 <div class="container-fluid">
+
     <!-- forms -->
     <div class="row d-flex justify-content-center">
 
@@ -13,7 +14,7 @@
 
             </p>
 
-            <div class="row">
+            <div class="row pb-4">
                 <div class="col-md-6">
                     <div class="collapse multi-collapse" id="multiCollapseExample1">
                         <div class="card card-body">
@@ -72,22 +73,32 @@
                                 <div class="mb-3">
 
                                     <label for="promocao" class="form-label">Promoção:</label>
-                                    <select [(ngModel)] = "promo" class="form-control" name="promocao" id="promocao" (change) = "validaPromo($event)">
+                                    <select [(ngModel)]="promo" class="form-control" name="promocao" id="promocao"
+                                        (change)="validaPromo($event)">
                                         <option value="selecione">Selecione uma opção</option>
                                         <option value="true">Sim</option>
                                         <option value="false">Não</option>
-
+  
                                     </select>
 
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="categoria" class="form-label">Categoria:</label>
-                                    <select class="form-control" name="categoria" id="categoria"  [(ngModel)] = "idCat" (change) = "findByIdCategoria()">
+                                    <select class="form-control" name="categoria" id="categoria" [(ngModel)]="idCat"
+                                        (change)="findByIdCategoria()">
                                         <option value="0">Selecione uma categoria</option>
                                         <option *ngFor="let categoria of listaCategoria" [value]="categoria.codigo">
                                             {{categoria.nome}}</option>
                                     </select>
+                                </div>
+
+                                <div class="mb-3">
+
+                                    <label for="foto" class="form-label">Link da Foto</label>
+                                    <input [(ngModel)]="produto.foto" type="text" class="form-control" id="foto">
+
+
                                 </div>
 
                                 <div class="d-flex justify-content-end">
@@ -101,13 +112,35 @@
 
                     </div>
 
+
+
+
+
+
+
+
                 </div>
+            </div>
 
+            <p class="text-center ">
+                <a class="btn btn-success mr-2" data-toggle="collapse" href="#usuarioCadastro" role="button"
+                    aria-expanded="false" aria-controls="usuarioCadastro">Cadastrar usuario</a>
 
+            </p>
+
+            <div class="row d-flex justify-content-center pb-4">
+                <div class="col-md-12">
+                    <div class="collapse multi-collapse" id="usuarioCadastro">
+                        <div class="card card-body">
+                            <div>
+                                <app-cadastrar></app-cadastrar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
-
     </div>
     <!-- /forms -->
 
@@ -150,7 +183,9 @@
                                     <td>{{cat.descricao}}</td>
                                     <td>{{cat.setor}}</td>
                                     <td>
-                                        <button class="btn btn-outline-info" [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES </button>
+                                        <button class="btn btn-outline-info"
+                                            [routerLink]="['/editar-deletar', cat.codigo]"> MODIFICAÇÕES
+                                        </button>
                                     </td>
                                 </tr>
                         </table>
@@ -184,7 +219,9 @@
                                     <th scope="col">Preço</th>
                                     <th scope="col">Descrição</th>
                                     <th scope="col">Estoque</th>
+                                    <th scope="col">Promoção</th>
                                     <th scope="col">Categoria</th>
+                                    <th scope="col">Foto</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -198,12 +235,15 @@
                                     <td>{{prod.preco}}</td>
                                     <td>{{prod.descricao}}</td>
                                     <td>{{prod.quantidade}}</td>
+                                    <td>{{prod.promocao}}</td>
                                     <td>{{prod.categoria.nome}}</td>
-                                    
+                                    <td>{{prod.foto}}</td>
+
+
                                     <td>
-                                        <a class="mr-3"><i class="ed fa fa-pencil-square-o"
-                                                aria-hidden="true"></i></a>
-                                        <a data-toggle="modal" data-target="#exampleModal"><i class="rm fa fa-trash" aria-hidden="true"></i></a>
+                                        <button class="btn btn-outline-info"
+                                            [routerLink]="['/editar-deletar-produto', prod.codigo]"> MODIFICAÇÕES
+                                        </button>
                                     </td>
 
                                 </tr>
@@ -224,23 +264,22 @@
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
-        <div class="modal-body">
-      
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
-    <!-- Acordeão -->
-
+<!-- Acordeão -->
